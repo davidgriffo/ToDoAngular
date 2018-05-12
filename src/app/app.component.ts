@@ -8,16 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
  
  todos : ToDo[] = [
-  {serialNumber: 1,task: 'Run',status: false,duedate: '13-05-2018'},
-  {serialNumber: 2,task: 'Walk',status: false,duedate: '14-05-2018'}
+  {serialNumber: 0,task: 'Run',status: false,duedate: '13-05-2018'},
+  {serialNumber: 1,task: 'Walk',status: false,duedate: '14-05-2018'}
  ];
-
- serialNumber: number;
  task: string;
- status: boolean;
  duedate: string;
+
  
  title = 'app';
+
+ addToDo(){
+    let nextId = this.todos.length;
+    this.todos.push({serialNumber: nextId,task: this.task,status: false,duedate: this.duedate});
+ }
+
+ updateToDo(index: number){
+    this.todos[index].status = !this.todos[index].status;
+ }
 }
 
 class ToDo {
