@@ -1,32 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-    <label for="task">Task</label>
-    <input type="text" [(ngModel)]="task"><br>
-    <br>
-    <label for="DueDate">Due Date</label>
-    <input type="text" [(ngModel)]="duedate"><br>
-    <br>
-    <input type="button" value = "Add ToDo" (click)="addToDo()">
-</div>
-<div style="text-align:center">
-  <table>
-    <thead>
-      <tr>
-        <th>Serial No:</th>
-        <th>Description</th>
-        <th>Due Date</th>
-        <th>Status</th>
-        <th>Complete</th>
+<div class="container">
+  <div>
+      <div class="form-group">
+          <label for="task">Task</label>
+          <input class="form-control" type="text" [(ngModel)]="task">
+    </div>
+    <div class="form-group">
+        <label for="DueDate">Due Date</label>
+        <input class = "form-control" type="text" [(ngModel)]="duedate">
+    </div>
+    <button type="submit" class="btn btn-default" (click)="addToDo()">Add to Do</button>
+  </div>
+<br>
+<br>
+<br>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Serial No:</th>
+          <th>Description</th>
+          <th>Due Date</th>
+          <th>Complete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos" [ngStyle]="{ 'background-color': todo.status ? 'green':'red'}">
+          <td>{{todo.serialNumber}}</td>
+          <td>{{todo.task}}</td>
+          <td>{{todo.duedate}}</td>
+          <td><input type="checkbox" (click)="updateToDo(todo.serialNumber)" [checked]="todo.status"></td>
       </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let todo of todos" [ngStyle]="{ 'background-color': todo.status ? 'green':'red'}">
-        <td>{{todo.serialNumber}}</td>
-        <td>{{todo.task}}</td>
-        <td>{{todo.duedate}}</td>
-        <td>{{todo.status}}</td>
-        <td><input type="checkbox" (click)="updateToDo(todo.serialNumber)"></td>
-    </tr>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
+  </div>
 
