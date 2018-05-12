@@ -8,10 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
  
  todos : ToDo[] = [
-  new ToDo(1,'Run',false,'13-05-2018'),
-  new ToDo(2,'Work',false,'14-05-2018'),
-  new ToDo(3, 'Pay Bills',false,'16-05-2018')
+  {serialNumber: 1,task: 'Run',status: false,duedate: '13-05-2018'},
+  {serialNumber: 2,task: 'Walk',status: false,duedate: '14-05-2018'}
  ];
+
+ serialNumber: number;
+ task: string;
+ status: boolean;
+ duedate: string;
  
  title = 'app';
 }
