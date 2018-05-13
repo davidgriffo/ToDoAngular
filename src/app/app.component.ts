@@ -9,8 +9,8 @@ export class AppComponent {
  
  todos : ToDo[] = [
   {serialNumber: 0,task: 'Run',status: false,duedate: '13-05-2018'},
-  {serialNumber: 1,task: 'Walk',status: false,duedate: '14-05-2018'}
-  {serialNumber: 3,task: 'Sleep',status: false,duedate: '14-05-2018'}
+  {serialNumber: 1,task: 'Walk',status: false,duedate: '14-05-2018'},
+  {serialNumber: 2,task: 'Sleep',status: false,duedate: '14-05-2018'}
  ];
  task: string;
  duedate: string;
